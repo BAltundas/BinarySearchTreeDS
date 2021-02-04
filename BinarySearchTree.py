@@ -47,6 +47,11 @@ class BinarySearchTree:
             self.traverse_inorder(root.left)
             print(root.info)
             self.traverse_inorder(root.right)
+            
+    def height(self,root):
+        if root is None:
+            return -1
+        return max(self.height(root.left),self.height(root.right))+1
 
 tree = BinarySearchTree()
 
@@ -61,3 +66,6 @@ tree.insert(3)
     
 print('---In traverse order---:')
 tree.traverse_inorder(root)
+
+print('==height====')
+print(f'height of the tree is {tree.height(root)}')
